@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-debug.js"></script>
+	<script src="../ko-lodash-bridge.js"></script>
+    
+    <link href="./sample.css" rel="stylesheet" type="text/css" />    
+</head>
+<body>
+	<h1>ko-lodash-bridge sample</h1>
+    <h2>Full Array Data</h2>
+
+    <ul data-bind="foreach: characters">
+        <li data-bind="text: fullName"></li>
+    </ul>
+    
+    Enter first name to search: 
+    <input type="text" data-bind="value: firstNameFilter, valueUpdate: 'input'" /> 
+    
+    <h2>Filtered data</h2>
+    <!-- ko if: filteredCharacters().length > 0 -->
+    <ul data-bind="foreach: filteredCharacters">
+        <li data-bind="text: fullName"></li>
+    </ul>
+    <!-- /ko -->
+    <!-- ko ifnot: filteredCharacters().length > 0 -->
+    There are no matching characters
+    <!-- /ko -->
+    <script src="./sample.js"></script>
+</body>
+</html>
