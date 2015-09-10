@@ -1,4 +1,3 @@
-/* globals ko, _, define, exports, module, require */
 ; (function () {
     'use strict';
 
@@ -16,7 +15,6 @@
             factory(window['jsSort'] = {}, _, ko);
         }
     })(function (exports, _, ko) {
-        'use strict';
 
         _.callback = _.wrap(_.callback, function (callback, func, thisArg) {
             if (!_.isObject(func)) {
@@ -31,9 +29,9 @@
                 return _.every(func, isMatch.bind(null, object));
             };
         });
-        
+
         function isMatch(object, value, key) {
             return ko.unwrap(object[key]) === value && (value !== undefined || (key in object));
-        } 
+        }
     });
 })();
