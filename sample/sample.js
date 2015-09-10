@@ -13,7 +13,7 @@ function ViewModel() {
     this.characters = ko.observableArray([
         new Character('Fred', 'Flintstone'),
         new Character('Wilma', 'Flintstone'),
-        new Character('Barney', 'Rubble'),
+        new Character('Barney', 'Rubble')
     ]);
     this.firstNameFilter = ko.observable('');
     this.filteredCharacters =  ko.computed(filterCharacters, this);    

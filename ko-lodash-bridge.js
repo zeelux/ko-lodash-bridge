@@ -1,4 +1,4 @@
-/* globals ko, _, define */
+/* globals ko, _, define, exports, module, require */
 ; (function () {
     'use strict';
 
@@ -12,7 +12,7 @@
             factory(module['exports'] || exports);  // module.exports is for Node.js
         } else {
             // [3] No module loader (plain <script> tag) - put directly in global namespace
-            // underscore/lodash must be global as well.
+            // lodash and knockout must be global as well.
             factory(window['jsSort'] = {}, _, ko);
         }
     })(function (exports, _, ko) {
@@ -27,9 +27,8 @@
                 if (object == null) {
                     return false;
                 }
-                
-                var matchObj = func;
-                return _.every(matchObj, isMatch.bind(null, object));
+
+                return _.every(func, isMatch.bind(null, object));
             };
         });
         
