@@ -199,7 +199,6 @@ FakesAssemblies/
 
 # Logs
 logs
-*.log
 
 # Runtime data
 pids
@@ -227,3 +226,7 @@ node_modules
 
 # JSPM Packages
 jspm_packages
+
+#Webstorm
+.idea/
+
